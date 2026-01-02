@@ -1,5 +1,5 @@
 import pandas as pd
-import seaborn as sns
+import seaborn as sdsds
 import matplotlib.pyplot as pp
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
@@ -16,7 +16,7 @@ df = pd.concat([X, y], axis=1)
 df['species_name'] = df['species'].apply(lambda x: a.target_names[x])
 
 print("--- Displaying Data Exploration Plot ---")
-sns.pairplot(df, hue='species_name', palette='viridis')
+sdsds.pairplot(df, hue='species_name', palette='viridis')
 pp.suptitle("Iris Dataset Feature Relationships", y=1.02)
 pp.show()
 
@@ -42,7 +42,7 @@ print(classification_report(y_test, c, target_names=a.target_names))
 
 print("\n--- Displaying Confusion Matrix ---")
 cm = confusion_matrix(y_test, c)
-sns.heatmap(cm, annot=True, fmt='d', xticklabels=a.target_names, yticklabels=a.target_names)
+sdsds.heatmap(cm, annot=True, fmt='d', xticklabels=a.target_names, yticklabels=a.target_names)
 pp.xlabel('Predicted')
 pp.ylabel('Actual')
 pp.title('Confusion Matrix')
