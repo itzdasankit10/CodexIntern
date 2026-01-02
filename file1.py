@@ -1,6 +1,6 @@
 import pandas as pd
 import seaborn as sns
-import matplotlib.pyplot as plt
+import matplotlib.pyplot as pp
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
@@ -17,8 +17,8 @@ df['species_name'] = df['species'].apply(lambda x: a.target_names[x])
 
 print("--- Displaying Data Exploration Plot ---")
 sns.pairplot(df, hue='species_name', palette='viridis')
-plt.suptitle("Iris Dataset Feature Relationships", y=1.02)
-plt.show()
+pp.suptitle("Iris Dataset Feature Relationships", y=1.02)
+pp.show()
 
 # 3. Split data into training and test sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
@@ -43,7 +43,7 @@ print(classification_report(y_test, c, target_names=a.target_names))
 print("\n--- Displaying Confusion Matrix ---")
 cm = confusion_matrix(y_test, c)
 sns.heatmap(cm, annot=True, fmt='d', xticklabels=a.target_names, yticklabels=a.target_names)
-plt.xlabel('Predicted')
-plt.ylabel('Actual')
-plt.title('Confusion Matrix')
-plt.show()
+pp.xlabel('Predicted')
+pp.ylabel('Actual')
+pp.title('Confusion Matrix')
+pp.show()
