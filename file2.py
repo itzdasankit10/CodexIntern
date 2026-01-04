@@ -25,10 +25,10 @@ X_train_scaled = b.fit_transform(X_train)
 
 c = LinearRegression()
 c.fit(X_train_scaled, y_train)
-print("--- New custom model training is complete ---")
+print(" New custom model training is complete ")
 
 
-print("\n--- Enter New House Details for Price Prediction ---")
+print(" Enter New House Details for Price Prediction ")
 
 d = []
 for feature in feature_names:
@@ -44,4 +44,4 @@ e = np.array([d])
 f = b.transform(e)
 g = c.predict(f)
 
-print(f"\nThe predicted price for the house with your features is: ${g[0]:,.2f}")
+print(f"The predicted price for the house with your features is: ${g[0]:,.2f}")
